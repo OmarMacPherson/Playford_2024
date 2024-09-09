@@ -159,6 +159,8 @@ Once the job data was collected, the next crucial step was to clean and transfor
 
 # <p align="center"> Data Analysis Using SQL </p>
 
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/SQL_ANALYTICS.jpg)
+
 After the dataset was cleaned and standardized, SQL queries were used to perform analysis and extract valuable insights. These queries were primarily focused on identifying duplicate entries, calculating totals for full-time and part-time roles, and analyzing the distribution of job listings by location. The following SQL techniques were used:
 
 * **Finding Duplicates:** A SQL query was used to detect duplicate job listings based on the combination of job title and company name, ensuring no redundant entries were presented.
@@ -216,4 +218,134 @@ LIMIT 5;
 Output:
 
 ![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Output%204.png)
+
+# <p align="center"> Automation Using Python </p>
+
+Automation played a key role in ensuring the accuracy and consistency of job data during the Career Expo. Several Python scripts were created to automate different tasks, including verifying job links, checking QR codes on PowerPoint slides, and validating the information in Google Sheets. Below are the key automation techniques used:
+
+### 1) Job Availability Check (Link Verification): 
+
+* **Objective:** Automatically verify whether job links in the dataset were still active or if the job postings had been removed.
+
+* **Libraries Used:**
+
+  * **Pandas:** For handling data in Excel files.
+  * **Requests:** For making HTTP requests to job listing websites.
+  * **BeautifulSoup:** For parsing the HTML of the job pages.
+  * **tqdm:** For adding progress bars to loops.
+
+* **How it Works:** This script takes URLs from the dataset and checks each one to see if the job listing is still active. If a job posting is inactive, the script marks it as "Not Active."
+
+```ruby
+df = pd.read_excel('Path_To_Excel.xlsx')
+
+def check_availability(url):
+    if not url.startswith(('http://', 'https://')):
+        url = 'https://' + url
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, 'html.parser')
+            if soup.find(string="This job is no longer advertised"):
+                return "Not Active"
+            else:
+                return "Active"
+        else:
+            return "Not Active"
+    except Exception as e:
+        print(f"Error checking URL {url}: {e}")
+        return "Not Active"
+
+df['Job Availability'] = df['Original Link'].progress_apply(check_availability)
+df.to_excel('Verified_Links.xlsx', index=False)
+```
+
+> [!IMPORTANT]
+> Including a delay in the requests prevents the IP from being blocked due to excessive requests. This can be done using time.sleep() to mimic human behavior.
+
+Output:
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Check_Links.png)
+
+### 2) QR Code Validation in PowerPoint: 
+
+* **Objective:** This script checks if the QR codes in the PowerPoint presentation match the correct job listings. It scans each QR code and extracts the corresponding job link, ensuring that the links are accurate.
+
+* **Libraries Used:**
+
+  * **pptx:** For reading and manipulating PowerPoint presentations.
+  * **cv2 and pyzbar:** For decoding QR codes in the slides.
+  * **pandas:** For organizing the extracted data.
+  * **tqdm:** For progress bars during the processing of multiple slides.
+ 
+* **How it Works:** The script loops through each slide in the PowerPoint presentation, extracts the QR code image, decodes it, and checks the link against the expected job listing.
+
+```ruby
+ppt_path = 'Path_To_Presentation.pptx'
+presentation = Presentation(ppt_path)
+
+def extract_qr_code_link(image):
+    decoded_objects = decode(image)
+    for obj in decoded_objects:
+        return obj.data.decode('utf-8')
+    return None
+
+jobs_data = []
+for slide in presentation.slides:
+    for shape in slide.shapes:
+        if shape.shape_type == 13:  
+            image_stream = io.BytesIO(shape.image.blob)
+            image = Image.open(image_stream)
+            qr_code_image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+            qr_link = extract_qr_code_link(qr_code_image)
+            jobs_data.append({'QR Link': qr_link})
+
+df = pd.DataFrame(jobs_data)
+df.to_excel('QR_Validation.xlsx', index=False)
+```
+
+Layout Power Point:
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/LAYOUT.png)
+
+Output:
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/QR%20Matching.png)
+
+### 3) Content Matching Between Links: 
+
+* **Objective:** Verify that the content of the original job link matches the content of the shortened link or QR code to prevent discrepancies.
+
+* **Libraries Used:**
+
+  * **requests and BeautifulSoup:** For fetching and parsing the content of each job listing.
+  * **pandas:** For organizing the content and comparing the original and shortened job descriptions
+  * **tqdm:** For progress tracking.
+ 
+* **How it Works:** This script fetches the content of both the original and shortened job links and compares the text. If the text matches, it marks it as "Yes," and if there is a discrepancy, it is marked as "No."
+
+```ruby
+def fetch_content(url):
+    try:
+        response = requests.get(url, timeout=20)
+        response.encoding = 'utf-8'
+        soup = BeautifulSoup(response.content, 'html.parser')
+        return ' '.join(soup.stripped_strings)
+    except Exception as e:
+        print(f"Error fetching content from {url}: {e}")
+        return None
+
+df['Original Content'] = df['Original Link'].progress_apply(fetch_content)
+df['Short Content'] = df['Short Link'].progress_apply(fetch_content)
+
+df['Content Match'] = df.apply(lambda row: 'Yes' if row['Original Content'] == row['Short Content'] else 'No', axis=1)
+
+df.to_excel('Content_Comparison_Results.xlsx', index=False)
+```
+
+Output:
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Links_Matching.png)
+
+By employing Python for automation, we significantly reduced the manual effort required for checking job availability, ensuring QR code accuracy, and validating the content across different job posting sources. These automations not only improved data reliability but also allowed for real-time updates, ensuring that expo attendees had access to the most accurate job postings.
 
