@@ -157,3 +157,63 @@ Once the job data was collected, the next crucial step was to clean and transfor
 ![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/POWER%20QUERY.png)
 ![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/excel%20cleaned.png)
 
+# <p align="center"> Data Analysis Using SQL </p>
+
+After the dataset was cleaned and standardized, SQL queries were used to perform analysis and extract valuable insights. These queries were primarily focused on identifying duplicate entries, calculating totals for full-time and part-time roles, and analyzing the distribution of job listings by location. The following SQL techniques were used:
+
+* **Finding Duplicates:** A SQL query was used to detect duplicate job listings based on the combination of job title and company name, ensuring no redundant entries were presented.
+
+```ruby
+SELECT `Job Title`, `Company Name`, COUNT(*) as DuplicateCount 
+FROM Practice_Playford 
+GROUP BY `Job Title`, `Company Name` 
+HAVING COUNT(*) > 1;
+```
+
+Output:
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Output%201.png)
+
+* **Counting Total Records:** To get an overview of the dataset, a query was run to count the total number of records (job listings).
+
+```ruby
+SELECT COUNT(*) as TotalRecords 
+FROM Practice_Playford;
+```
+
+Output:
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Output%202.png)
+
+* **Counting Job Types (Full-Time and Part-Time):** Specific queries were written to count the number of full-time and part-time roles, which helped the team see what kind of employment opportunities were most common.
+
+```ruby
+SELECT COUNT(*) as FullTimeRoles 
+FROM Practice_Playford 
+WHERE `Employment Type` = 'Full-time';
+```
+
+```ruby
+SELECT COUNT(*) as PartTimeRoles 
+FROM Practice_Playford 
+WHERE `Employment Type` = 'Part-time';
+```
+
+Output:
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Output%203.png)
+
+* **Location Analysis:** An analysis of the top 5 locations with the highest number of job listings was conducted to guide decision-making for resource allocation at the event.
+
+```ruby
+SELECT Location, COUNT(*) as JobCount 
+FROM Practice_Playford 
+GROUP BY Location 
+ORDER BY JobCount DESC 
+LIMIT 5;
+```
+
+Output:
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Output%204.png)
+
