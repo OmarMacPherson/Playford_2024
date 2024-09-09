@@ -87,3 +87,49 @@ def fetch_html(url):
         print(f"Request error for {url}: {e}")
         return None
 ```
+
+* **Web Scraping:** The HTML content is parsed using BeautifulSoup to extract specific data points from each job post, such as the job title, company name, and responsibilities.
+
+> [!IMPORTANT]
+> Before writing the scraping code, it's essential to inspect the HTML structure of the web page you are targeting. By identifying the tags and attributes associated with key data (e.g., job title, company name), you can write more efficient and accurate selectors in your code. This helps improve the performance and reliability of your web scraping process.
+
+```ruby
+# Inspect Job Title in Seek HTML
+<h1 class="xvu5580 _159rinv4y _7vq8im0 _7vq8iml _1708b944 _7vq8ims _7vq8im21" data-automation="job-detail-title">Operations Manager</h1>
+```
+
+```ruby
+# scraping code optimised.
+def scrape_job_details(job_url):
+    job_html = fetch_html(job_url)
+    if job_html:
+        soup = BeautifulSoup(job_html, 'html.parser')
+# Inspect the HTML code for better performance
+        title = soup.find('h1', {'data-automation': 'job-detail-title'}).get_text(strip=True)
+        responsibilities = ' '.join([li.get_text(strip=True) for li in soup.find_all('li')])
+        return {
+# Customize your instructions
+            'Job Title': title,
+            'Responsibilities': responsibilities,
+        }
+
+```
+
+* **Saving Data:** Once the job data is collected, it is stored in a pandas DataFrame and exported to an Excel file.
+
+```ruby
+df = pd.DataFrame(jobs_data)
+df.to_excel('Path_Excel.xlsx', index=False)  # Saving the extracted data
+```
+
+* **Rate Limiting:** To avoid triggering anti-bot measures or being blocked by the website, the script includes a delay using the time.sleep() function. This simulates human browsing behavior by introducing pauses between consecutive requests.
+
+```ruby
+for job_link in tqdm(job_links[:1000], desc='Scraping job details'):
+    job_details = scrape_job_details(job_link)
+    if job_details:
+        jobs_data.append(job_details)
+    time.sleep(x value)  # Delay to mimic human behavior and avoid being blocked
+```
+
+This automated data collection method ensured that we had up-to-date job postings to display at the North Adelaide 2024 Career Expo, streamlining the data acquisition process significantly.
