@@ -54,12 +54,14 @@ This project involved a series of specialized techniques across various stages o
 
 # <p align="center"> Data Collection with Python </p>
 
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Python%20web.jpeg)
+
 The first step was to automate the collection of job listings from various online job portals. This was achieved using a Python script that performed web scraping on Seek, a popular job portal. The goal was to collect job details like job title, company name, location, industry, employment type, and job responsibilities.
 
 ### 1) Importing Libraries:
 
 * **Requests:** To send HTTP requests to the website and fetch the HTML content.
-* **BeautifulSoup** (from bs4): To parse the HTML and extract specific information from the job postings.
+* **BeautifulSoup (from bs4):** To parse the HTML and extract specific information from the job postings.
 * **Pandas:** To store the extracted data in a structured format (dataframes) and export it as an Excel file.
 * **TQDM:** To provide a progress bar, offering real-time feedback on the scraping process.
 * **Time:** To introduce delays between requests to mimic human browsing behavior and avoid being blocked by the website.
@@ -133,3 +135,25 @@ for job_link in tqdm(job_links[:1000], desc='Scraping job details'):
 ```
 
 This automated data collection method ensured that we had up-to-date job postings to display at the North Adelaide 2024 Career Expo, streamlining the data acquisition process significantly.
+
+* **Output:** Testing Code. 
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Scrapping%20Success.png)
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/excel%20success.png)
+
+# <p align="center"> Data Cleaning and Transformation with Power Query </p>
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Power%20Query2.jpeg)
+
+Once the job data was collected, the next crucial step was to clean and transform the dataset to ensure consistency, accuracy, and readiness for further analysis. Power Query was primarily used to handle this process, with Google Sheets as the workspace for quick manual checks and adjustments.
+
+### Key Steps in Data Cleaning:
+
+* **Standardizing Location Names:** Many job listings used different formats for the same location. This inconsistency was addressed by standardizing location names using Power Query.
+* **Handling Missing Data:** Several job listings had missing fields (e.g., phone numbers, emails). These were either filled in manually or labeled as "Not Provided" to ensure data integrity.
+* **Adding Unique Identifiers:** Unique IDs were assigned to each job listing to make it easier to track and reference specific listings across different stages of the project.
+* **Removing Duplicates:** Power Query’s built-in functionality was used to identify and remove any duplicate job entries, ensuring that the dataset was free from redundancy.
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/POWER%20QUERY.png)
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/excel%20cleaned.png)
+
