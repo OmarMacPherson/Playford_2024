@@ -221,6 +221,8 @@ Output:
 
 # <p align="center"> Automation Using Python </p>
 
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Python_Automation.jpg)
+
 Automation played a key role in ensuring the accuracy and consistency of job data during the Career Expo. Several Python scripts were created to automate different tasks, including verifying job links, checking QR codes on PowerPoint slides, and validating the information in Google Sheets. Below are the key automation techniques used:
 
 ### 1) Job Availability Check (Link Verification): 
@@ -347,5 +349,92 @@ Output:
 
 ![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Links_Matching.png)
 
-By employing Python for automation, we significantly reduced the manual effort required for checking job availability, ensuring QR code accuracy, and validating the content across different job posting sources. These automations not only improved data reliability but also allowed for real-time updates, ensuring that expo attendees had access to the most accurate job postings.
+The use of Python automation streamlined key tasks, including verifying job availability, validating QR codes, and matching content across job links. This ensured data accuracy, reduced manual effort, and provided real-time updates, maintaining the reliability of job listings throughout the event preparation process.
 
+
+# <p align="center"> Real-Time Dashboard Creation </p>
+
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/TABLEAU.jpg)
+
+The dashboard was built in Tableau to provide real-time insights to the managers at the City of Playford regarding the jobs collected for the 2024 Northern Adelaide Jobs and Careers Expo. The main objective of the dashboard was to allow the managers to monitor the number of job listings available by location, employment type, and industry, facilitating quick decision-making during the expo preparation.
+
+* **Features of the Dashboard:**
+
+  * **Total Jobs Collected:** A summary metric that shows the total number of job postings collected.
+  * **Top 5 Job Locations:** A bar chart highlighting the five areas with the most job opportunities, allowing managers to see regional demand.
+  * **Jobs by Employment Type:** A bar chart summarizing the job types, such as full-time, part-time, contract, and apprenticeships, to help identify the balance of roles available.
+  * **Filter by Industry and Location:** A real-time interactive filter allowing the managers to narrow down the job listings by specific industries or locations.
+
+* **Real Time Data Sync:**
+
+The dashboard was linked to the Google Sheets that stored all job data. Any updates in the Google Sheet were reflected in real-time on the Tableau dashboard, ensuring the most current information was always available.
+
+# Interactive Dashboard Access
+
+Explore the interactive dashboard and you can get your own insights and answers for your own investigative questions. To access to the Dashboard [CLICK HERE](https://public.tableau.com/app/profile/omar.alan.mac.pherson/viz/Playford/Dashboard1) or in the Dashboard Picture.
+
+[![FLipkart](https://github.com/OmarMacPherson/Playford_2024/blob/main/Dashboard%20Image.png)](https://public.tableau.com/app/profile/omar.alan.mac.pherson/viz/Playford/Dashboard1)
+
+# <p align="center"> Challenges Encountered </p>
+
+During the development of this project, several challenges were encountered:
+
+* **Real-time Data Updates:** Ensuring that the data collected from job portals remained accurate and up-to-date required creating scripts that frequently checked the status of each job listing. Automation helped solve this, but it required continuous testing to avoid breaking changes in the source websites.
+* **Web Scraping Limitations:** The need to avoid detection and ensure reliable performance of web scraping led to the implementation of rate limiting (delays between requests), which slowed down the process but prevented IP blocking.
+* **Data Consistency:** Ensuring the job titles, descriptions, and other details were consistent and correctly formatted for display across platforms (Google Sheets, Tableau, and PowerPoint) involved significant data cleaning and transformation efforts.
+* **QR Code & link Matching:** Validating that the QR codes and shortened links correctly matched the job listings was a delicate task, and we built scripts to automate this process and minimize manual intervention.
+
+# <p align="center"> Results </p>
+
+The City of Playford’s 2024 Career Expo Job Board Automation System successfully achieved the following results:
+
+* **Jobs Collected:** The system gathered and displayed job listings from a wide range of industries in Northern Adelaide.
+* **Real-Time Insights:** The Tableau Dashboard provided managers at the City of Playford with live updates, allowing for efficient decision-making regarding job availability and sectors to focus on.
+* **Automation Benefits:** By automating job link checks, QR code verification, and data synchronization, the system reduced manual workload, ensuring up-to-date information was always available for both the expo attendees and managers.
+
+# <p align="center"> Invitation for Use </p>
+
+> [!IMPORTANT]
+> This project is open for use, and all the code shared here can be applied to similar job board or data management tasks in other contexts. If you are working on a similar project or require further assistance with implementing this system or any of its components, feel free to reach out.
+>
+> You are welcome to explore and use the code in this repository for your projects, whether it's data collection, automation, or dashboard creation. If you need any clarification, guidance, or help with customization, I am available to assist. Feel free to contact me for any questions or further details.
+
+> [!IMPORTANT]
+> For any inquiries or further discussions on this project, please feel free to connect via [LinkedIn](www.linkedin.com/in/omaralan). or send an [E-mail](omar.macpherson@outlook.com).
+
+# <p align="center"> Conclusion and Future Directions </p>
+
+This project showcased the value of automating data collection, validation, and analysis to optimize operations at a large-scale event like the **2024 Career Expo.** The system not only provided real-time insights for decision-making but also streamlined repetitive tasks, enhancing overall efficiency.
+
+For future developments, several data-driven enhancements could be implemented:
+
+* **Advanced Data Analytics:** By integrating predictive analytics, we could forecast job trends and demand across industries, offering deeper insights to event organizers for better planning and resource allocation.
+* **Expanded Data Sources:** Incorporating additional job portals and automating the integration of these sources would increase the depth and variety of job listings available to attendees.
+* **Enhanced Reporting:** Introducing automated reporting with more dynamic visualizations and real-time updates for different stakeholders would improve tracking of event success metrics, such as job placement rates or sector performance.
+
+These improvements would not only continue to drive operational efficiency but also offer actionable insights, making data-driven decisions more accessible to key stakeholders.
+
+# Author
+
+This Project has been designed and done by **Omar Mac Pherson**.
+
+[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/OmarMacPherson)  [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40'>](https://www.linkedin.com/in/omaralan/)  [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/tableau.svg' alt='tableau' height='40'>](https://public.tableau.com/app/profile/omar.alan.mac.pherson/vizzes)  
+
+# Credits
+
+### Format & Style
+
+    * Github Docs (https://docs.github.com/)
+    * Dev (https://dev.to/github)
+    * Free Code Camp (https://www.freecodecamp.org/)
+
+### Other
+
+    * Icons (https://github.com/anuraghazra/github-readme-stats)
+    * Icons (https://www.flaticon.com/free-icons/github)
+    * Design Responsive (https://arturssmirnovs.github.io/)
+    * HTML (https://talk.jekyllrb.com/t/how-to-add-a-image-with-links-in-markdown/5915)
+    * Markdown (https://codinhood.com/nano/git/center-images-text-github-readme/)
+    * Markdown 2 (https://github.com/orgs/community/discussions/16925)
+    * Badges (https://github.com/Ileriayo/markdown-badges)
+    * Icons (https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/)
