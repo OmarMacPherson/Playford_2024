@@ -1,6 +1,6 @@
 # Playford Career Expo Automation System: Enhancing Job Discovery for North Adelaide 2024
 
-![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Omar_Macpherson_Playford.jpg)
+![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Landscape_Playford.png)
 
 This project was developed for the inaugural North Adelaide 2024 Career Expo, organized by the City of Playford. Aimed at streamlining the presentation of job opportunities, the project prepared for an event expected to attract 10,000 attendees, facilitating direct connections between job seekers and employers in the Northern Adelaide area.
 
