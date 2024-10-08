@@ -2,7 +2,7 @@
 
 ![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/Landscape_Playford.png)
 
-This project was developed for the inaugural North Adelaide 2024 Career Expo, organized by the City of Playford. Aimed at streamlining the presentation of job opportunities, the project prepared for an event expected to attract 10,000 attendees, facilitating direct connections between job seekers and employers in the Northern Adelaide area.
+This project was developed for the inaugural North Adelaide 2024 Career Expo, organised by the City of Playford. Aimed at streamlining the presentation of job opportunities, the project prepared for an event expected to attract 10,000 attendees, facilitating direct connections between job seekers and employers in the Northern Adelaide area.
 
 # Objective: 
 
@@ -14,7 +14,7 @@ The objective of this project was to enhance event operations by automating the 
 
 # Tech Stack Used in this project
 
-This project harnessed a variety of modern data collection, analysis, and visualization technologies to automate and enhance the job board system for the Career Expo. 
+This project harnessed a variety of modern data collection, analysis, and visualisation technologies to automate and enhance the job board system for the Career Expo. 
 
 ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
@@ -25,7 +25,7 @@ This project harnessed a variety of modern data collection, analysis, and visual
 
 # Techniques Used in this Project
 
-This project involved a series of specialized techniques across various stages of data handling and presentation:
+This project involved a series of specialised techniques across various stages of data handling and presentation:
 
 ### **Data Collection:**
 
@@ -34,13 +34,13 @@ This project involved a series of specialized techniques across various stages o
 
 ### **Data Cleaning and Transformation:**
 
-* **Data Standardization:** Utilized Power Query to standardize location names and other textual data for consistency.
+* **Data Standardisation:** Utilised Power Query to standardize location names and other textual data for consistency.
 * **Data Enrichment:** Added unique identifiers and relevant metadata to enhance data usability.
  
 ### **Data Analysis Using SQL:**
 
 * **Duplicate Identification:** SQL queries to detect and remove duplicate entries.
-* **Data Aggregation:** Employed SQL functions to summarize data, such as counting jobs by location and categorizing them by industry.
+* **Data Aggregation:** Employed SQL functions to summarise data, such as counting jobs by location and categorising them by industry.
 
 ### **Automation Using Python:**
 
@@ -49,8 +49,8 @@ This project involved a series of specialized techniques across various stages o
  
 ### **Dashboard Creation:**
 
-* **Real-Time Data Visualization:** Designed and implemented a Tableau dashboard that displays job metrics dynamically.
-* **Interactive Filters:** Setup filters for industry and location to allow managers to customize views according to their needs.
+* **Real-Time Data Visualisation:** Designed and implemented a Tableau dashboard that displays job metrics dynamically.
+* **Interactive Filters:** Setup filters for industry and location to allow managers to customise views according to their needs.
 
 # <p align="center"> Data Collection with Python </p>
 
@@ -149,7 +149,7 @@ Once the job data was collected, the next crucial step was to clean and transfor
 
 ### Key Steps in Data Cleaning:
 
-* **Standardizing Location Names:** Many job listings used different formats for the same location. This inconsistency was addressed by standardizing location names using Power Query.
+* **Standardising Location Names:** Many job listings used different formats for the same location. This inconsistency was addressed by standardising location names using Power Query.
 * **Handling Missing Data:** Several job listings had missing fields (e.g., phone numbers, emails). These were either filled in manually or labeled as "Not Provided" to ensure data integrity.
 * **Adding Unique Identifiers:** Unique IDs were assigned to each job listing to make it easier to track and reference specific listings across different stages of the project.
 * **Removing Duplicates:** Power Query’s built-in functionality was used to identify and remove any duplicate job entries, ensuring that the dataset was free from redundancy.
@@ -161,7 +161,7 @@ Once the job data was collected, the next crucial step was to clean and transfor
 
 ![Data Analyst Professional](https://github.com/OmarMacPherson/Playford_2024/blob/main/SQL_ANALYTICS.jpg)
 
-After the dataset was cleaned and standardized, SQL queries were used to perform analysis and extract valuable insights. These queries were primarily focused on identifying duplicate entries, calculating totals for full-time and part-time roles, and analyzing the distribution of job listings by location. The following SQL techniques were used:
+After the dataset was cleaned and standardized, SQL queries were used to perform analysis and extract valuable insights. These queries were primarily focused on identifying duplicate entries, calculating totals for full-time and part-time roles, and analysing the distribution of job listings by location. The following SQL techniques were used:
 
 * **Finding Duplicates:** A SQL query was used to detect duplicate job listings based on the combination of job title and company name, ensuring no redundant entries were presented.
 
@@ -321,7 +321,7 @@ Output:
 * **Libraries Used:**
 
   * **requests and BeautifulSoup:** For fetching and parsing the content of each job listing.
-  * **pandas:** For organizing the content and comparing the original and shortened job descriptions
+  * **pandas:** For organising the content and comparing the original and shortened job descriptions
   * **tqdm:** For progress tracking.
  
 * **How it Works:** This script fetches the content of both the original and shortened job links and compares the text. If the text matches, it marks it as "Yes," and if there is a discrepancy, it is marked as "No."
@@ -397,7 +397,7 @@ The City of Playford’s 2024 Career Expo Job Board Automation System successful
 > [!IMPORTANT]
 > This project is open for use, and all the code shared here can be applied to similar job board or data management tasks in other contexts. If you are working on a similar project or require further assistance with implementing this system or any of its components, feel free to reach out.
 >
-> You are welcome to explore and use the code in this repository for your projects, whether it's data collection, automation, or dashboard creation. If you need any clarification, guidance, or help with customization, I am available to assist. Feel free to contact me for any questions or further details.
+> You are welcome to explore and use the code in this repository for your projects, whether it's data collection, automation, or dashboard creation. If you need any clarification, guidance, or help with customisation, I am available to assist. Feel free to contact me for any questions or further details.
 
 > [!IMPORTANT]
 > For any inquiries or further discussions on this project, please feel free to connect via [LinkedIn](www.linkedin.com/in/omaralan). or send an [E-mail](omar.macpherson@outlook.com).
@@ -408,9 +408,9 @@ This project showcased the value of automating data collection, validation, and 
 
 For future developments, several data-driven enhancements could be implemented:
 
-* **Advanced Data Analytics:** By integrating predictive analytics, we could forecast job trends and demand across industries, offering deeper insights to event organizers for better planning and resource allocation.
+* **Advanced Data Analytics:** By integrating predictive analytics, we could forecast job trends and demand across industries, offering deeper insights to event organisers for better planning and resource allocation.
 * **Expanded Data Sources:** Incorporating additional job portals and automating the integration of these sources would increase the depth and variety of job listings available to attendees.
-* **Enhanced Reporting:** Introducing automated reporting with more dynamic visualizations and real-time updates for different stakeholders would improve tracking of event success metrics, such as job placement rates or sector performance.
+* **Enhanced Reporting:** Introducing automated reporting with more dynamic visualisations and real-time updates for different stakeholders would improve tracking of event success metrics, such as job placement rates or sector performance.
 
 These improvements would not only continue to drive operational efficiency but also offer actionable insights, making data-driven decisions more accessible to key stakeholders.
 
